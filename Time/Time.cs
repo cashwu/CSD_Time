@@ -16,9 +16,19 @@ namespace Time
             this.dt = dt;
         }
 
+        public Time(IDateTime dt)
+        {
+            this.dt = dt.GetDate();
+        }
+
         public string GetNowString()
         {
             return dt.ToString("yyyy/MM/dd HH:mm:ss fff");
         }
+    }
+
+    public interface IDateTime
+    {
+        DateTime GetDate();
     }
 }
